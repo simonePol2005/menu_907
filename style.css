@@ -1,0 +1,542 @@
+/* 1. Impostazioni generali della pagina */
+body {
+    background-color: #12161a;
+    color: #e5d3b3;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0; 
+    line-height: 1.6;
+}
+
+/* 2. BARRA SUPERIORE FISSA */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #12161a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    z-index: 999;
+    border-bottom: 1px solid rgba(223, 183, 108, 0.15);
+}
+
+.logo-container {
+    text-align: left;
+}
+
+.site-logo {
+    max-height: 50px; 
+    width: auto;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.main-header .subtitle {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #a39274;
+    margin: 0;
+}
+
+.navbar-spacer {
+    height: 110px; /* Evita sovrapposizioni sotto la barra fissa */
+}
+
+/* MENU ORIZZONTALE PER COMPUTER */
+.category-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.category-nav li {
+    display: inline-block; 
+    margin-left: 15px;
+}
+
+.category-nav a {
+    text-decoration: none; 
+    color: #dfb76c; 
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.category-nav a:hover {
+    color: #e5d3b3;
+}
+
+.nav-highlight {
+    border-bottom: 1px solid #dfb76c;
+    padding-bottom: 3px;
+}
+
+/* Linea divisoria */
+.divider {
+    height: 1px;
+    width: 60px;
+    background-color: #dfb76c;
+    margin: 0 auto 40px auto;
+}
+
+/* 3. Layout del Menu e Sezioni */
+.menu-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu-section {
+    margin-bottom: 50px;
+    scroll-margin-top: 110px; /* Impedisce alla barra fissa di coprire i titoli quando ci si sposta con i link */
+}
+
+.menu-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    border-bottom: 1px dashed #4a3f2c;
+    padding-bottom: 10px;
+    color: #dfb76c;
+}
+
+.subsection-title {
+    text-align: center;
+    color: #a39274;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* 4. Stile dei Singoli Piatti e Cocktail */
+.menu-item {
+    margin-bottom: 25px;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.item-name {
+    color: #e5d3b3;
+}
+
+.item-price {
+    color: #dfb76c;
+}
+
+.item-description {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #a39274;
+    font-style: italic;
+}
+
+/* STILE DRINK PREMIUM GIN */
+.premium-item {
+    background: linear-gradient(135deg, rgba(223, 183, 108, 0.05) 0%, rgba(18, 22, 26, 0) 100%);
+    border-left: 3px solid #dfb76c;
+    padding: 15px 15px 15px 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.premium-name {
+    background: linear-gradient(90deg, #fff 0%, #dfb76c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+/* 5. GESTIONE MOBILITÀ DI DEFAULT (NASCONDI ELEMENTI SMARTPHONE DA PC) */
+.mobile-menu {
+    display: none;
+}
+
+/* 6. SEZIONE NOVITÀ */
+.novita-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    margin-top: 60px;
+    background-color: #12161a;
+}
+
+.novita-container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.novita-text {
+    flex: 1;
+    text-align: left;
+}
+
+.novita-text h2 {
+    font-size: 2.5rem;
+    color: #dfb76c;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.novita-text p {
+    font-size: 1.2rem;
+    color: #e5d3b3;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.novita-text strong {
+    color: #dfb76c;
+    font-weight: bold;
+}
+
+.novita-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.novita-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(223, 183, 108, 0.2),
+                0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* 7. SEZIONE PARALLASSE (CHI SIAMO, 907ESCAPE) */
+.parallax-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(18, 22, 26, 0.2) 0%,
+        rgba(18, 22, 26, 0.4) 40%,
+        rgba(18, 22, 26, 0.7) 80%,
+        rgba(18, 22, 26, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.parallax-content {
+    max-width: 750px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.parallax-content h2 {
+    font-size: 3rem;
+    color: #dfb76c;
+    margin: 0 0 15px 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-divider {
+    height: 3px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, #dfb76c, transparent);
+    margin: 25px auto 35px;
+}
+
+.parallax-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #e5d3b3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.parallax-content strong {
+    color: #dfb76c;
+    font-weight: bold;
+}
+
+.info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 60px;
+    padding-top: 35px;
+    border-top: 2px solid rgba(223, 183, 108, 0.4);
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-box h3 {
+    font-size: 1.05rem;
+    color: #dfb76c;
+    letter-spacing: 2px;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    color: #a39274;
+    margin: 0;
+}
+
+/* BOTTONE 907ESCAPE */
+.escape-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 40px;
+    background-color: #dfb76c;
+    color: #12161a;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.escape-button:hover {
+    background-color: #e5d3b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* 8. Footer */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #5c513b;
+    letter-spacing: 1px;
+    padding: 40px 20px;
+    background-color: #0c0f12;
+}
+
+/* ==========================================
+   REGOLAZIONI IPER-RESPONSIVE PER SMARTPHONE
+   ========================================== */
+@media (max-width: 850px) {
+    /* Nasconde il menu esteso da PC */
+    .pc-menu {
+        display: none !important;
+    }
+    
+    /* Attiva e mostra l'hamburger menu */
+    .mobile-menu {
+        display: block !important;
+    }
+
+    /* MECCANISMO AD HAMBURGER LATERALE */
+    .menu-checkbox {
+        display: none;
+    }
+
+    .hamburger-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 16px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger-button span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #dfb76c;
+        transition: all 0.3s ease;
+    }
+
+    /* Pannello nero a comparsa da destra */
+    .side-category-nav {
+        position: fixed;
+        top: 0;
+        right: -280px; /* Inizia nascosto a destra */
+        width: 280px;
+        height: 100vh;
+        background-color: #0b0e11;
+        padding: 90px 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 1002;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .close-menu-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 32px;
+        color: #dfb76c;
+        cursor: pointer;
+    }
+
+    .side-category-nav ul {
+        margin: 30px 0 0 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: right;
+    }
+
+    .side-category-nav li {
+        margin-bottom: 22px;
+    }
+
+    .side-category-nav a {
+        text-decoration: none;
+        color: #dfb76c;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .side-menu-footer {
+        margin-top: auto;
+        text-align: right;
+        color: #4a3f2c;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    /* Velo nero protettivo di sfondo */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        z-index: 1000;
+    }
+
+    /* Apertura controllata al clic */
+    .menu-checkbox:checked ~ .side-category-nav {
+        right: 0;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* MOBILE NOVITÀ */
+    .novita-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .novita-text {
+        text-align: center;
+    }
+
+    .novita-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .novita-text p {
+        font-size: 1rem;
+    }
+
+    .novita-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .novita-section {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    /* MOBILE PARALLASSE */
+    .parallax-section {
+        background-attachment: scroll;
+        min-height: 70vh;
+    }
+
+    .parallax-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(18, 22, 26, 0.3) 0%,
+            rgba(18, 22, 26, 0.5) 40%,
+            rgba(18, 22, 26, 0.8) 80%,
+            rgba(18, 22, 26, 0.97) 100%
+        );
+        padding: 60px 20px;
+    }
+
+    .parallax-content h2 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .parallax-content p {
+        font-size: 0.95rem;
+    }
+
+    .info-grid {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+
+    .escape-button {
+        padding: 10px 30px;
+        font-size: 0.85rem;
+    }
+}
+
