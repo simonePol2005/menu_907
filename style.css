@@ -503,24 +503,30 @@ footer {
 
     /* MOBILE PARALLASSE */
     .parallax-section {
-        background-attachment: scroll;
-        min-height: 70vh;
-    }
-
-    .parallax-overlay {
-        background: linear-gradient(
-            180deg,
-            rgba(18, 22, 26, 0.3) 0%,
-            rgba(18, 22, 26, 0.5) 40%,
-            rgba(18, 22, 26, 0.8) 80%,
-            rgba(18, 22, 26, 0.97) 100%
-        );
+        background-attachment: scroll !important;
+        min-height: auto;
         padding: 60px 20px;
     }
 
+    .parallax-overlay {
+        position: relative;
+        background: linear-gradient(
+            180deg,
+            rgba(18, 22, 26, 0.3) 0%,
+            rgba(18, 22, 26, 0.5) 50%,
+            rgba(18, 22, 26, 0.95) 100%
+        );
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .parallax-content {
+        max-width: 100%;
+    }
+
     .parallax-content h2 {
-        font-size: 2rem;
-        letter-spacing: 2px;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
     }
 
     .parallax-content p {
@@ -530,13 +536,13 @@ footer {
     .info-grid {
         flex-direction: column;
         gap: 30px;
-        margin-top: 40px;
+        margin-top: 30px;
         padding-top: 30px;
     }
 
     .escape-button {
         padding: 10px 30px;
         font-size: 0.85rem;
+        margin-top: 20px;
     }
 }
-
